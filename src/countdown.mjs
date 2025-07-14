@@ -1,4 +1,4 @@
-export function getUnitsRemaining(deadlineMs) {
+function getUnitsRemaining(deadlineMs) {
   const secondsRemaining = getSecondsRemaining(deadlineMs);
   if (secondsRemaining < 1)
     return {

@@ -1,8 +1,8 @@
-import { makeTimer, makeFakeTimer, makeHybridTimer } from "./countdown.mjs";
+import * as countdown from "./countdown.mjs";
 const timeString = "2025-08-18 20:51";
-const timer = makeTimer(timeString);
-const fakeTimer = makeFakeTimer(timeString);
-const hybridTimer = makeHybridTimer(timeString);
+const timer = countdown.makeTimer(timeString);
+const fakeTimer = countdown.makeFakeTimer(timeString);
+const hybridTimer = countdown.makeHybridTimer(timeString);
 
 setInterval(() => {
   console.log("Real: ", timer());
