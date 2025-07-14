@@ -1,0 +1,24 @@
+{
+  "name": "@gld5000-cli/countdown",
+  "version": "1.0.0",
+  "description": "A simple, lightweight countdown timer to a given deadline",
+  "keywords": [
+    "countdown",
+    "timer"
+  ],
+  "homepage": "https://github.com/GLD5000/gld-countdown#readme",
+  "bugs": {
+    "url": "https://github.com/GLD5000/gld-countdown/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GLD5000/gld-countdown.git"
+  },
+  "license": "MIT",
+  "author": "GLD5000",
+  "type": "commonjs",
+  "main": "src/index",
+  "scripts": {
+    "test": "node test.mjs"
+  }
+}
