@@ -46,6 +46,19 @@ export function* makeFakeTimer(deadlineString) {
     yield unitsRemaining;
   }
 }
+export function* makeHybridTimer(deadlineString) {
+  const deadlineMs = parseDeadline(deadlineString);
+  let unitsRemaining = getUnitsRemaining(deadlineMs);
+  yield unitsRemaining;
+  while (true) {
+    const secondsRemaining = unitsRemaining.seconds;
+    unitsRemaining =
+      secondsRemaining === 0
+        ? getUnitsRemaining(deadlineMs)
+        : decrementUnitsRemaining(unitsRemaining);
+    yield unitsRemaining;
+  }
+}
 function decrementUnitsRemaining(unitsRemaining) {
   const {
     days: oldDays,
