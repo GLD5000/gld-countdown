@@ -53,7 +53,7 @@ export function* makeHybridTimer(deadlineString) {
   while (true) {
     const secondsRemaining = unitsRemaining.seconds;
     unitsRemaining =
-      secondsRemaining === 0
+      secondsRemaining === 12
         ? getUnitsRemaining(deadlineMs)
         : decrementUnitsRemaining(unitsRemaining);
     yield unitsRemaining;

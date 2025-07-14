@@ -1,5 +1,5 @@
 import { makeTimer, makeFakeTimer, makeHybridTimer } from "./countdown.mjs";
-const timeString = "2025-07-14 20:48";
+const timeString = "2025-08-18 20:51";
 const timer = makeTimer(timeString);
 const fakeTimer = makeFakeTimer(timeString);
 const hybridTimer = makeHybridTimer(timeString);
