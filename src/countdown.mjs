@@ -1,5 +1,5 @@
 /**
- * Description placeholder
+ * 
  *
  * @param {number} deadlineMs 
  * @returns {{ days: number; hours: number; minutes: number; seconds: number; }} 
@@ -27,7 +27,7 @@ function getUnitsRemaining(deadlineMs) {
 }
 
 /**
- * Description placeholder
+ * 
  *
  * @param {string} deadlineString 
  * @returns {number} 
@@ -38,7 +38,7 @@ function parseDeadline(deadlineString) {
 }
 
 /**
- * Description placeholder
+ * 
  *
  * @param {number} deadlineMs 
  * @returns {number} 
@@ -50,7 +50,7 @@ function getSecondsRemaining(deadlineMs) {
 }
 
 /**
- * Description placeholder
+ * 
  *
  * @export
  * @param {string} deadlineString 
