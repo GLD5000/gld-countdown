@@ -1,11 +1,11 @@
-# [@gld5000-cli/countdown](https://www.npmjs.com/package/@gld5000-cli/countdown)
+# [@gld5000-js/countdown](https://www.npmjs.com/package/@gld5000-js/countdown)
 
 A simple, lightweight countdown timer to a given deadline
 
 ## Install
 
 ```
-npm i @gld5000-cli/countdown
+npm i @gld5000-js/countdown
 ```
 
 ## Example Usage
@@ -13,7 +13,7 @@ npm i @gld5000-cli/countdown
 ### Import (.mjs)
 
 ```
-import * as countdown from '@gld5000-cli/countdown'
+import * as countdown from '@gld5000-js/countdown'
 ```
 
 ### Example Input
@@ -57,13 +57,13 @@ function getUnitsRemaining(deadlineMs) {
 ## Update
 
 ```
-npm update @gld5000-cli/countdown
+npm update @gld5000-js/countdown
 ```
 
 ## Uninstall
 
 ```
-npm uninstall @gld5000-cli/countdown
+npm uninstall @gld5000-js/countdown
 ```
 
 ## License
