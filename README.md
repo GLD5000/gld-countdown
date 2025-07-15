@@ -43,17 +43,13 @@ Remaining:  { days: 34, hours: 12, minutes: 12, seconds: 56 }
 ## Update
 
 ```
-
 npm update @gld5000-cli/countdown
-
 ```
 
 ## Uninstall
 
 ```
-
 npm uninstall @gld5000-cli/countdown
-
 ```
 
 ## License
