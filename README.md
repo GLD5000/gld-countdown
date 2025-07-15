@@ -26,7 +26,7 @@ setInterval(() => {
   console.log("Remaining: ", timer());
 }, 1000);
 ```
-
+console.log(countdown.countdownString)
 ### Example Output
 
 ```
@@ -38,6 +38,20 @@ Remaining:  { days: 34, hours: 12, minutes: 12, seconds: 59 }
 Remaining:  { days: 34, hours: 12, minutes: 12, seconds: 58 }
 Remaining:  { days: 34, hours: 12, minutes: 12, seconds: 57 }
 Remaining:  { days: 34, hours: 12, minutes: 12, seconds: 56 }
+
+function getUnitsRemaining(deadlineMs) {
+  const secondsRemaining = getSecondsRemaining(deadlineMs);
+  if (secondsRemaining < 1)
+    return {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    };
+  const seconds = secondsRemaining % 60;
+  const minutes = Math.floor((secondsRemaining / 60) % 60);
+  const hours = Math.floor(secondsRemaining / 60 / 60) % 24;
+  const days = Math.floor(secondsRemaining / 60 / 60 / 24);
 ```
 
 ## Update
