@@ -5,7 +5,7 @@ A simple, lightweight countdown timer to a given deadline
 ## Install
 
 ```
-npm i -D @gld5000-cli/countdown
+npm i @gld5000-cli/countdown
 ```
 
 ## Example Usage
