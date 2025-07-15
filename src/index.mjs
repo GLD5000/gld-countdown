@@ -5,11 +5,11 @@ const fakeTimer = countdown.makeFakeTimer(timeString);
 const hybridTimer = countdown.makeHybridTimer(timeString);
 
 setInterval(() => {
-  console.log("Real: ", timer());
+  console.log("Remaining: ", timer());
 }, 1000);
-setInterval(() => {
-  console.log("Fake: ", fakeTimer.next().value);
-}, 1000);
-setInterval(() => {
-  console.log("Hybrid: ", hybridTimer.next().value);
-}, 1000);
+// setInterval(() => {
+//   console.log("Fake: ", fakeTimer.next().value);
+// }, 1000);
+// setInterval(() => {
+//   console.log("Hybrid: ", hybridTimer.next().value);
+// }, 1000);

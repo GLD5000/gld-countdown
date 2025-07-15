@@ -13,33 +13,48 @@ npm i -D @gld5000-cli/countdown
 ### Import (.mjs)
 
 ```
-import { * as countdown } from '@gld5000-cli/countdown'
+import * as countdown from '@gld5000-cli/countdown'
 ```
 
 ### Example Input
 
 ```
-Add your code here...
+const timeString = "2025-08-18 20:51";
+const timer = countdown.makeTimer(timeString);
+
+setInterval(() => {
+  console.log("Remaining: ", timer());
+}, 1000);
 ```
 
 ### Example Output
 
 ```
-Add your code here...
+Remaining:  { days: 34, hours: 12, minutes: 13, seconds: 3 }
+Remaining:  { days: 34, hours: 12, minutes: 13, seconds: 2 }
+Remaining:  { days: 34, hours: 12, minutes: 13, seconds: 1 }
+Remaining:  { days: 34, hours: 12, minutes: 13, seconds: 0 }
+Remaining:  { days: 34, hours: 12, minutes: 12, seconds: 59 }
+Remaining:  { days: 34, hours: 12, minutes: 12, seconds: 58 }
+Remaining:  { days: 34, hours: 12, minutes: 12, seconds: 57 }
+Remaining:  { days: 34, hours: 12, minutes: 12, seconds: 56 }
 ```
 
 ## Update
 
 ```
+
 npm update @gld5000-cli/countdown
+
 ```
 
 ## Uninstall
 
 ```
-npm uninstall @gld5000-cli/countdown
-```
 
+npm uninstall @gld5000-cli/countdown
+
+```
 
 ## License
 
