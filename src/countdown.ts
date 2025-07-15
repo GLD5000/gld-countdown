@@ -4,7 +4,7 @@
  * @param {number} deadlineMs 
  * @returns {{ days: number; hours: number; minutes: number; seconds: number; }} 
  */
-function getUnitsRemaining(deadlineMs) {
+function getUnitsRemaining(deadlineMs: number) {
   const secondsRemaining = getSecondsRemaining(deadlineMs);
   if (secondsRemaining < 1)
     return {
@@ -32,7 +32,7 @@ function getUnitsRemaining(deadlineMs) {
  * @param {string} deadlineString 
  * @returns {number} 
  */
-function parseDeadline(deadlineString) {
+function parseDeadline(deadlineString:string) {
   const deadlineMs = Date.parse(deadlineString);
   return deadlineMs;
 }
@@ -43,7 +43,7 @@ function parseDeadline(deadlineString) {
  * @param {number} deadlineMs 
  * @returns {number} 
  */
-function getSecondsRemaining(deadlineMs) {
+function getSecondsRemaining(deadlineMs:number) {
   const now = Date.now();
   const differenceMs = deadlineMs - now;
   return Math.floor(differenceMs * 0.001);
@@ -56,7 +56,7 @@ function getSecondsRemaining(deadlineMs) {
  * @param {string} deadlineString 
  * @returns {() => { days: number; hours: number; minutes: number; seconds: number; }} 
  */
-export function makeTimer(deadlineString) {
+export function makeTimer(deadlineString:string) {
   const deadlineMs = parseDeadline(deadlineString);
   return () => {
     return getUnitsRemaining(deadlineMs);

@@ -17,8 +17,16 @@
   "license": "MIT",
   "author": "GLD5000",
   "type": "commonjs",
-  "main": "src/index.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  
   "scripts": {
     "test": "node test.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
   }
 }
