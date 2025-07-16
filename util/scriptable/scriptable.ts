@@ -31,7 +31,7 @@ export function getSecondsRemaining(deadlineMs: number) {
   return Math.floor(differenceMs * 0.001);
 }
 
-export default function makeTimerInline(deadlineString: string) {
+function makeTimerInline(deadlineString: string) {
   const deadlineMs = parseDeadline(deadlineString);
   const spans = getDigitSpans();
   return () => {
@@ -61,7 +61,9 @@ export default function makeTimerInline(deadlineString: string) {
     });
   }
 }
-var timerGld = makeTimerInline("2025-07-20 23:59:59");
-setInterval(() => {
-  timerGld();
-}, 1000);
+if (typeof document !== "undefined") {
+  var timerGld = makeTimerInline("2025-07-20 23:59:59");
+  setInterval(() => {
+    timerGld();
+  }, 1000);
+}

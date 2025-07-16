@@ -22,7 +22,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "node test.mjs",
-    "scriptable": "npx tsup src/scriptable/scriptable.ts --minify --format iife && node util/stringifyScript.mjs && npm run tsup",
+    "scriptable": "npx tsup util/scriptable/scriptable.ts --minify --format iife && node util/scriptable/stringifyScript.mjs && npm run tsup",
     "tsup": "npx tsup src/index.ts --dts --format esm,cjs"
   },
   "devDependencies": {
