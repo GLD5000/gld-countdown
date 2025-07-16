@@ -1,6 +1,6 @@
 {
   "name": "@gld5000-js/countdown",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A simple, lightweight countdown timer to a given deadline",
   "keywords": [
     "countdown",
@@ -22,8 +22,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "node test.mjs",
-    "scriptable:js":"npx tsup src/scriptable/countdownScriptable.ts --format iife",
-    "tsup":"npx tsup src/index.ts --dts --format esm,cjs"
+    "scriptable:js": "npx tsup src/scriptable/countdownScriptable.ts --format iife",
+    "tsup": "npx tsup src/index.ts --dts --format esm,cjs"
   },
   "devDependencies": {
     "tsup": "^8.5.0",
