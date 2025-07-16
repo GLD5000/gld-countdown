@@ -59,7 +59,7 @@ function getSecondsRemaining(deadlineMs) {
 function makeTimer(deadlineString) {
   const deadlineMs = parseDeadline(deadlineString);
   return () => {
-    getUnitsRemaining(deadlineMs);
+    return getUnitsRemaining(deadlineMs);
   };
 }
 

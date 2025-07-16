@@ -1,4 +1,9 @@
-declare function makeTimer(deadlineString: string): () => void;
+declare function makeTimer(deadlineString: string): () => {
+    days: number;
+    hours: number;
+    minutes: number;
+    seconds: number;
+};
 
 declare const countdownString: string;
 
