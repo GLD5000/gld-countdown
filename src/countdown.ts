@@ -3,6 +3,6 @@ import { parseDeadline, getUnitsRemaining } from "./scriptable/countdownScriptab
 export function makeTimer(deadlineString: string) {
   const deadlineMs = parseDeadline(deadlineString);
   return () => {
-    getUnitsRemaining(deadlineMs);
+    return getUnitsRemaining(deadlineMs);
   };
 }
