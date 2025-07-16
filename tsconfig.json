@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["ES2023"],
+    "lib": ["ES2023","DOM"],
     "module": "commonjs",
     "noImplicitAny": true,
     "removeComments": true,

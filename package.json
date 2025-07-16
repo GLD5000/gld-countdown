@@ -21,13 +21,19 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "node test.mjs"
+    "test": "node test.mjs",
+    "scriptable:js":"npx tsup src/scriptable/countdownScriptable.ts --format iife",
+    "tsup":"npx tsup src/index.ts --dts --format esm,cjs"
   },
   "devDependencies": {
     "tsup": "^8.5.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "@types/react": "latest",
+    "@types/react-dom": "latest"
   },
   "dependencies": {
-    "@types/node": "^24.0.14"
+    "@types/node": "^24.0.14",
+    "react": "latest",
+    "react-dom": "latest"
   }
 }

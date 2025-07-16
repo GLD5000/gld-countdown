@@ -1,4 +1,4 @@
-const string = `function getUnitsRemaining(deadlineMs) {
+export function getUnitsRemaining(deadlineMs: number) {
   const secondsRemaining = getSecondsRemaining(deadlineMs);
   if (secondsRemaining < 1)
     return {
@@ -11,6 +11,7 @@ const string = `function getUnitsRemaining(deadlineMs) {
   const minutes = Math.floor((secondsRemaining / 60) % 60);
   const hours = Math.floor(secondsRemaining / 60 / 60) % 24;
   const days = Math.floor(secondsRemaining / 60 / 60 / 24);
+
   return {
     days,
     hours,
@@ -18,31 +19,38 @@ const string = `function getUnitsRemaining(deadlineMs) {
     seconds,
   };
 }
-function parseDeadline(deadlineString) {
+
+export function parseDeadline(deadlineString: string) {
   const deadlineMs = Date.parse(deadlineString);
   return deadlineMs;
 }
-function getSecondsRemaining(deadlineMs) {
+
+export function getSecondsRemaining(deadlineMs: number) {
   const now = Date.now();
   const differenceMs = deadlineMs - now;
-  return Math.floor(differenceMs * 1e-3);
+  return Math.floor(differenceMs * 0.001);
 }
-function makeTimerInline(deadlineString) {
+
+export default function makeTimerInline(deadlineString: string) {
   const deadlineMs = parseDeadline(deadlineString);
   const spans = getDigitSpans();
   return () => {
-    updateDigits(spans, getUnitsRemaining(deadlineMs));
+    updateDigits(spans,getUnitsRemaining(deadlineMs));
   };
   function getDigitSpans() {
     const digitCollection = document.querySelectorAll(".gld-countdown-digits");
-    const digitRecord = {};
+    const digitRecord: Record<string, Element> = {};
     digitCollection.forEach((spanElement) => {
       const name = spanElement.getAttribute("id").replace("gld-countdown-", "");
       digitRecord[name] = spanElement;
     });
     return digitRecord;
   }
-  function updateDigits(digitRecord, newUnits) {
+  
+  function updateDigits(
+    digitRecord: Record<string, Element>,
+    newUnits: Record<string, number>
+  ) {
     Object.entries(digitRecord).forEach((entry) => {
       const [key, element] = entry;
       const newValue = newUnits[key].toString().padStart(2, "0");
@@ -53,6 +61,4 @@ function makeTimerInline(deadlineString) {
     });
   }
 }
-makeTimerInline("2025-07-20 23:59:59");`.replaceAll("export ", "");
-
-export const countdownString = string;
+//replace all 'export function' with 'function'

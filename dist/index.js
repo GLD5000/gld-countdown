@@ -24,7 +24,7 @@ __export(index_exports, {
 });
 module.exports = __toCommonJS(index_exports);
 
-// src/countdown.ts
+// src/scriptable/countdownScriptable.ts
 function getUnitsRemaining(deadlineMs) {
   const secondsRemaining = getSecondsRemaining(deadlineMs);
   if (secondsRemaining < 1)
@@ -54,21 +54,17 @@ function getSecondsRemaining(deadlineMs) {
   const differenceMs = deadlineMs - now;
   return Math.floor(differenceMs * 1e-3);
 }
+
+// src/countdown.ts
 function makeTimer(deadlineString) {
   const deadlineMs = parseDeadline(deadlineString);
   return () => {
-    return getUnitsRemaining(deadlineMs);
+    getUnitsRemaining(deadlineMs);
   };
 }
 
 // src/countdownString.ts
-var string = `/**
- * 
- *
- * @param {number} deadlineMs 
- * @returns {{ days: number; hours: number; minutes: number; seconds: number; }} 
- */
-function getUnitsRemaining(deadlineMs) {
+var string = `function getUnitsRemaining(deadlineMs) {
   const secondsRemaining = getSecondsRemaining(deadlineMs);
   if (secondsRemaining < 1)
     return {
@@ -81,7 +77,6 @@ function getUnitsRemaining(deadlineMs) {
   const minutes = Math.floor((secondsRemaining / 60) % 60);
   const hours = Math.floor(secondsRemaining / 60 / 60) % 24;
   const days = Math.floor(secondsRemaining / 60 / 60 / 24);
-
   return {
     days,
     hours,
@@ -89,43 +84,42 @@ function getUnitsRemaining(deadlineMs) {
     seconds,
   };
 }
-
-/**
- * 
- *
- * @param {string} deadlineString 
- * @returns {number} 
- */
 function parseDeadline(deadlineString) {
   const deadlineMs = Date.parse(deadlineString);
   return deadlineMs;
 }
-
-/**
- * 
- *
- * @param {number} deadlineMs 
- * @returns {number} 
- */
 function getSecondsRemaining(deadlineMs) {
   const now = Date.now();
   const differenceMs = deadlineMs - now;
-  return Math.floor(differenceMs * 0.001);
+  return Math.floor(differenceMs * 1e-3);
 }
-
-/**
- * 
- *
- * @export
- * @param {string} deadlineString 
- * @returns {() => { days: number; hours: number; minutes: number; seconds: number; }} 
- */
-export function makeTimer(deadlineString) {
+function makeTimerInline(deadlineString) {
   const deadlineMs = parseDeadline(deadlineString);
+  const spans = getDigitSpans();
   return () => {
-    return getUnitsRemaining(deadlineMs);
+    updateDigits(spans, getUnitsRemaining(deadlineMs));
   };
-}`.replaceAll("export ", "");
+  function getDigitSpans() {
+    const digitCollection = document.querySelectorAll(".gld-countdown-digits");
+    const digitRecord = {};
+    digitCollection.forEach((spanElement) => {
+      const name = spanElement.getAttribute("id").replace("gld-countdown-", "");
+      digitRecord[name] = spanElement;
+    });
+    return digitRecord;
+  }
+  function updateDigits(digitRecord, newUnits) {
+    Object.entries(digitRecord).forEach((entry) => {
+      const [key, element] = entry;
+      const newValue = newUnits[key].toString().padStart(2, "0");
+      const oldValue = element.innerHTML;
+      if (newValue != oldValue) {
+        element.innerHTML = newValue;
+      }
+    });
+  }
+}
+makeTimerInline("2025-07-20 23:59:59");`.replaceAll("export ", "");
 var countdownString = string;
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

@@ -1,4 +1,4 @@
-import * as countdown from './src/index.mjs'
+import * as countdown from './dist/index.mjs'
 
 const timeString = "2025-08-18 20:51";
 const timer = countdown.makeTimer(timeString);
