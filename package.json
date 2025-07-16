@@ -22,7 +22,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "node test.mjs",
-    "scriptable:js": "npx tsup src/scriptable/countdownScriptable.ts --format iife",
+    "scriptable:js": "npx tsup src/scriptable/countdownScriptable.ts --minify --format iife",
     "tsup": "npx tsup src/index.ts --dts --format esm,cjs"
   },
   "devDependencies": {

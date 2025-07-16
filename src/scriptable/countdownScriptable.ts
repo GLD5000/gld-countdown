@@ -35,7 +35,7 @@ export default function makeTimerInline(deadlineString: string) {
   const deadlineMs = parseDeadline(deadlineString);
   const spans = getDigitSpans();
   return () => {
-    updateDigits(spans,getUnitsRemaining(deadlineMs));
+    updateDigits(spans, getUnitsRemaining(deadlineMs));
   };
   function getDigitSpans() {
     const digitCollection = document.querySelectorAll(".gld-countdown-digits");
@@ -46,7 +46,7 @@ export default function makeTimerInline(deadlineString: string) {
     });
     return digitRecord;
   }
-  
+
   function updateDigits(
     digitRecord: Record<string, Element>,
     newUnits: Record<string, number>
@@ -61,4 +61,9 @@ export default function makeTimerInline(deadlineString: string) {
     });
   }
 }
+var timerGld = makeTimerInline("2025-07-20 23:59:59");
+setInterval(() => {
+  timerGld();
+}, 1000);
+
 //replace all 'export function' with 'function'
