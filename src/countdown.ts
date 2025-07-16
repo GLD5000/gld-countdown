@@ -1,4 +1,4 @@
-import { parseDeadline, getUnitsRemaining } from "./scriptable/countdownScriptable";
+import { parseDeadline, getUnitsRemaining } from "./scriptable/scriptable";
 
 export function makeTimer(deadlineString: string) {
   const deadlineMs = parseDeadline(deadlineString);

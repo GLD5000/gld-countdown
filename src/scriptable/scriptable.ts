@@ -65,5 +65,3 @@ var timerGld = makeTimerInline("2025-07-20 23:59:59");
 setInterval(() => {
   timerGld();
 }, 1000);
-
-//replace all 'export function' with 'function'
