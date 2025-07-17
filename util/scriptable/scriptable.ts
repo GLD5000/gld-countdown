@@ -63,6 +63,7 @@ function makeTimerInline(deadlineString: string) {
 }
 if (typeof document !== "undefined") {
   var timerGld = makeTimerInline("2025-07-20 23:59:59");
+  timerGld();
   setInterval(() => {
     timerGld();
   }, 1000);
