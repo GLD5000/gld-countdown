@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "author": "GLD5000",
-  "type": "commonjs",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
