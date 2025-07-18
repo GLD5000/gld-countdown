@@ -1,6 +1,6 @@
 {
   "name": "@gld5000-js/countdown",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "A simple, lightweight countdown timer to a given deadline",
   "keywords": [
     "countdown",
@@ -20,7 +20,9 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "files":["/lib"],
+  "files": [
+    "/lib"
+  ],
   "scripts": {
     "test": "node test.mjs",
     "scriptable": "npx tsup util/scriptable/scriptable.ts --minify --format iife && node util/scriptable/stringifyScript.mjs && npm run tsup",
