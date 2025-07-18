@@ -20,10 +20,11 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files":["/lib"],
   "scripts": {
     "test": "node test.mjs",
     "scriptable": "npx tsup util/scriptable/scriptable.ts --minify --format iife && node util/scriptable/stringifyScript.mjs && npm run tsup",
-    "tsup": "npx tsup src/index.ts --dts --format esm,cjs",
+    "tsup": "npx tsup lib/index.ts --dts --format esm,cjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
