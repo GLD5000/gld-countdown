@@ -1,6 +1,6 @@
 {
   "name": "@gld5000-js/countdown",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "A simple, lightweight countdown timer to a given deadline",
   "keywords": [
     "countdown",
@@ -20,7 +20,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "/lib","/dist"
+    "/lib",
+    "/dist"
   ],
   "scripts": {
     "test": "node test.mjs",
