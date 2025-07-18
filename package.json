@@ -18,10 +18,9 @@
   "author": "GLD5000",
   "type": "module",
   "main": "dist/index.js",
-  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "/lib"
+    "/lib","/dist"
   ],
   "scripts": {
     "test": "node test.mjs",
