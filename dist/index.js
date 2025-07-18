@@ -1,29 +1,3 @@
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __export = (target, all) => {
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-
-// lib/index.ts
-var index_exports = {};
-__export(index_exports, {
-  countdownString: () => countdownString,
-  makeTimer: () => makeTimer
-});
-module.exports = __toCommonJS(index_exports);
-
 // util/scriptable/scriptable.ts
 function getUnitsRemaining(deadlineMs) {
   const secondsRemaining = getSecondsRemaining(deadlineMs);
@@ -101,8 +75,7 @@ function makeTimer(deadlineString) {
 var string = String.raw`(()=>{function f(e){let n=p(e);if(n<1)return{days:0,hours:0,minutes:0,seconds:0};let t=n%60,i=Math.floor(n/60%60),c=Math.floor(n/60/60)%24;return{days:Math.floor(n/60/60/24),hours:c,minutes:i,seconds:t}}function m(e){return Date.parse(e)}function p(e){let n=Date.now(),t=e-n;return Math.floor(t*.001)}function M(e){let n=m(e),t=i();return()=>{c(t,f(n))};function i(){let o=document.querySelectorAll(".gld-countdown-digits"),s={};return o.forEach(r=>{let a=r.getAttribute("id").replace("gld-countdown-","");s[a]=r}),s}function c(o,s){Object.entries(o).forEach(r=>{let[a,u]=r,g=s[a].toString().padStart(2,"0"),l=u.innerHTML;g!=l&&(u.innerHTML=g)})}}typeof document<"u"&&(d=M("2025-07-20 23:59:59"),d(),setInterval(()=>{d()},1e3));var d;})();
 `;
 var countdownString = string;
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
+export {
   countdownString,
   makeTimer
-});
+};
